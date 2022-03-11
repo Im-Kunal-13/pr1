@@ -1,37 +1,36 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
-  let btn = document.querySelector("#btn");
-  let sidebar = document.querySelector(".sidebar");
-  let searchBtn = document.querySelector(".bx-search");
+  const [sidebarClassList, setSidebarClassList] = useState("sidebar");
+  const [sidebarActiveState, setSideBarActiveState] = useState(true);
+  const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
 
-  const searchBtnHandler = () => {
-    sidebar.classList.toggle("active");
-  }
+  const searchBtnHandler = () => {};
 
   const dashboardTogglerHandler = () => {
-    sidebar.classList.toggle("active");
+    setSideBarActiveState(!sidebarActiveState);
 
-    if (sidebar.classList.contains("active")) {
-      btn.classList.remove("bx-log-in");
-      btn.classList.add("bx-log-out");
+    if (sidebarActiveState) {
+      setSidebarClassList("sidebar active");
+      setToggleBtnIconClass("bx-log-out");
     } else {
-      btn.classList.remove("bx-log-out");
-      btn.classList.add("bx-log-in");
+      setSidebarClassList("sidebar");
+      setToggleBtnIconClass("bx-log-in");
     }
   };
 
   return (
     <>
-      <div className="sidebar">
+      <div className={sidebarClassList}>
         <div className="logo_content">
           <div className="logo">
             <i className="bx bxl-c-plus-plus"></i>
             <div className="logo_name">Coding Lab</div>
           </div>
           <i
-            className="bx bx-log-in"
+            className={`bx ${toggleBtnIconClass}`}
             id="btn"
             onClick={dashboardTogglerHandler}
           ></i>
@@ -39,7 +38,7 @@ export default function Sidebar() {
         <ul className="nav_list">
           <li onClick={searchBtnHandler}>
             <Link to="#">
-              <i className="bx bx-search" ></i>
+              <i className="bx bx-search"></i>
               <input type="text" placeholder="Search..." />
             </Link>
             <span className="tooltip">Search</span>
