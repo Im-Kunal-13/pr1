@@ -6,6 +6,9 @@ export default function Sidebar() {
   const [sidebarClassList, setSidebarClassList] = useState("sidebar");
   const [sidebarActiveState, setSideBarActiveState] = useState(true);
   const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
+  const [selectedBtn, setSelectedBtn] = useState("")
+
+  const btnHoverCss = {color: "#11101d", backgroundColor: "#fff"}
 
   const searchBtnHandler = () => {};
 
@@ -44,14 +47,18 @@ export default function Sidebar() {
             <span className="tooltip">Search</span>
           </li>
           <li>
-            <Link to="#">
+            <Link id="dashboardBtn" to="/dashboard" style={(selectedBtn === "dashboardBtn") ? btnHoverCss : {}} onClick ={() => {
+                setSelectedBtn("dashboardBtn")
+            }}>
               <i className="bx bx-grid-alt"></i>
               <span className="links_name">Dashboard</span>
             </Link>
             <span className="tooltip">Dashboard</span>
           </li>
           <li>
-            <Link to="#">
+            <Link id="userBtn" to="/user" style={(selectedBtn === "userBtn") ? btnHoverCss : {}} onClick ={() => {
+                setSelectedBtn("userBtn")
+            }}>
               <i className="bx bx-user"></i>
               <span className="links_name">User</span>
             </Link>
@@ -100,20 +107,27 @@ export default function Sidebar() {
             <span className="tooltip">Settings</span>
           </li>
         </ul>
-        {/* <!-- <div className="profile_content">
-        <div className="profile">
-          <div className="profile_details">
-            <img src="profile.jpg" alt="" />
-            <div className="name_job">
-              <div className="name">
-                <div className="name">Prem Shahi</div>
-                <div className="job">Web Designer</div>
+        <div className="profile_content">
+          <div className="profile">
+            {/* <div className="profile_details">
+              <img src="profile.jpg" alt="" />
+              <div className="name_job">
+                <div className="name">
+                  <div className="name">Prem Shahi</div>
+                  <div className="job">Web Designer</div>
+                </div>
               </div>
-            </div>
+            </div> */}
+            {/* <div class="form-check form-switch theme-toggler-container">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+              />
+            </div> */}
           </div>
-          <i className="bx bx-log-out" id="log_out"></i>
         </div>
-      </div> --> */}
       </div>
     </>
   );

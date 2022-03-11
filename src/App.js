@@ -8,7 +8,6 @@ import {
   useParams,
 } from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import Project from "./Project";
 
 export default function App() {
   // let navigate = useNavigate();
@@ -19,7 +18,8 @@ export default function App() {
         <div className="home_content">
           <Routes>
             <Route path="/" element={<h1>Home</h1>} />
-
+            <Route path="/user" element={<h1>User</h1>} />
+            <Route path="/dashboard" element={<h1>Dashboard</h1>} />
             <Route path="*" element={<h1>Error</h1>} />
           </Routes>
         </div>
