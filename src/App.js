@@ -15,9 +15,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="body-container">
-        <div>
           <Sidebar />
-        </div>
         <div className="home_content">
           <Routes>
             <Route path="/" element={<h1>Home</h1>} />
