@@ -14,14 +14,18 @@ export default function App() {
   // let navigate = useNavigate();
   return (
     <BrowserRouter>
-      <Sidebar />
-      {/* <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/about" element={<h1>About</h1>} />
-        <Route path="/projects/:projectname" element={<Project />} />
-        <Route path="/use-navigate" element={<h1>UseNavigate</h1>} />
-        <Route path="*" element={<h1>Error</h1>} />
-      </Routes> */}
+      <div className="body-container">
+        <div>
+          <Sidebar />
+        </div>
+        <div className="home_content">
+          <Routes>
+            <Route path="/" element={<h1>Home</h1>} />
+
+            <Route path="*" element={<h1>Error</h1>} />
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }
