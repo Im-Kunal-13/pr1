@@ -19,7 +19,7 @@ export default function App() {
           <Sidebar />
         <div className="home_content">
           <Routes>
-            <Route path="/" element={<h1> <i class="bi bi-house-door"></i></h1>} />
+            <Route path="/" element={<h1>Home</h1>} />
             <Route path="/user" element={<h1>User</h1>} />
             <Route path="/dashboard" element={<Dashboard /> } />
             <Route path="/analytics" element={<Analytics /> } />
