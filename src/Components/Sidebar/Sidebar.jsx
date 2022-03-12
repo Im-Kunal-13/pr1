@@ -1,10 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import sidebarContext from "../Context/sidebarContext";
 
 export default function Sidebar() {
+  // Sidebar Use Context.
+  const a = useContext(sidebarContext);
+
   const [sidebarClassList, setSidebarClassList] = useState("sidebar");
-  const [sidebarActiveState, setSideBarActiveState] = useState(true);
+  const [sidebarActiveState, setSideBarActiveState] = useState(false);
   const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
   const [selectedBtn, setSelectedBtn] = useState("");
 
@@ -15,15 +19,22 @@ export default function Sidebar() {
   };
 
   const dashboardTogglerHandler = () => {
-    setSideBarActiveState(!sidebarActiveState);
+    a.update();
 
-    if (sidebarActiveState) {
-      setSidebarClassList("sidebar active");
-      setToggleBtnIconClass("bx-log-out");
-    } else {
-      setSidebarClassList("sidebar");
-      setToggleBtnIconClass("bx-log-in");
-    }
+    setTimeout(() => {
+      setSideBarActiveState(!a.sidebarActiveState);
+
+      // adding corresponding classes to match the breakpoint.
+      if (!a.sidebarActiveState) {
+        setSidebarClassList("sidebar active");
+        setToggleBtnIconClass("bx-log-out");
+      } else {
+        setSidebarClassList("sidebar");
+        setToggleBtnIconClass("bx-log-in");
+      }
+
+      window.dispatchEvent(new Event("resize"));
+    }, 20);
   };
 
   return (
@@ -105,20 +116,28 @@ export default function Sidebar() {
             <span className="tooltip">Pie Chart</span>
           </li>
           <li>
-            <Link to="/bar" id="barBtn" style={selectedBtn === "barBtn" ? btnHoverCss : {}}
+            <Link
+              to="/bar"
+              id="barBtn"
+              style={selectedBtn === "barBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("barBtn");
-              }}>
+              }}
+            >
               <i className="bi bi-bar-chart"></i>
               <span className="links_name">Bar Chart</span>
             </Link>
             <span className="tooltip">Bar Chart</span>
           </li>
           <li>
-            <Link to="/analytics" id="analytics" style={selectedBtn === "analyticsBtn" ? btnHoverCss : {}}
+            <Link
+              to="/analytics"
+              id="analytics"
+              style={selectedBtn === "analyticsBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("analyticsBtn");
-              }}>
+              }}
+            >
               <i className="bi bi-activity"></i>
               <span className="links_name">Analytics</span>
             </Link>
@@ -139,10 +158,14 @@ export default function Sidebar() {
             <span className="tooltip">User</span>
           </li>
           <li>
-            <Link to="/settings" id="settings" style={selectedBtn === "settingBtn" ? btnHoverCss : {}}
+            <Link
+              to="/settings"
+              id="settings"
+              style={selectedBtn === "settingBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("settingBtn");
-              }}>
+              }}
+            >
               <i className="bx bx-cog"></i>
               <span className="links_name">Settings</span>
             </Link>
