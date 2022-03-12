@@ -283,3 +283,8 @@ body {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
 }
+.info-card-menuBtn {
+  position: absolute;
+  right: 5%;
+  color: #B6C1D3;
+}
