@@ -11,6 +11,7 @@
 }
 
 body {
+  background-color: aqua;
   position: relative;
   min-height: 100vh;
   width: 100%;
@@ -44,7 +45,7 @@ body {
   opacity: 1;
   pointer-events: none;
 }
-.logo_content .logo i {
+.logo_content .logo i,svg {
   font-size: 28px;
   margin-right: 5px;
 }
@@ -152,6 +153,14 @@ body {
   background-color: #fff;
 }
 .sidebar ul li i {
+  font-size: 20px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+.sidebar ul li svg {
   font-size: 20px;
   height: 50px;
   min-width: 50px;
