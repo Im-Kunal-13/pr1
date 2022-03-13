@@ -4,6 +4,11 @@ import InfoCard from "./sub-components/InfoCard";
 import sidebarContext from "../Context/sidebarContext";
 import { useEffect } from "react";
 import { clear } from "@testing-library/user-event/dist/clear";
+import OperatingSystem from "../OperatingSystem/OperatingSystem";
+import PopularPages from "../PopularPages/PopularPages";
+import myUserData from "../PopularPages/sub-components/Data";
+import DailyActiveUsers from "../ActiveUsers/DailyActiveUsers";
+import Demography from "../Demography/Demography";
 
 export default function Analytics() {
   // CARD BORDER STATES.
@@ -70,6 +75,114 @@ export default function Analytics() {
     ],
   });
 
+  // Operating System Settings
+  const [operatingSystemData, setOperatingSystemData] = useState({
+    labels: ["iOS", "Android"],
+    datasets: [
+      {
+        label: "Most Visited",
+        data: [60, 40],
+        backgroundColor: ["#5473E8", "#27ADB9"],
+        borderRadius: 5,
+        width: 0.4,
+      },
+    ],
+  });
+
+  // Popular Pages Chart Settings
+  const [secondBarData, setSecondBarData] = useState([75, 90, 50, 20, 40]);
+
+  const [popularPagesData, setpopularPagesData] = useState({
+    labels: ["Search", "Locations", "Payment", "Settings", "Profile "],
+    datasets: [
+      {
+        label: "Most Visited",
+        data: myUserData.map((data) => data.barData),
+        backgroundColor: "#5473E8",
+        maxBarThickness: 25,
+        borderRadius: 5,
+      },
+      {
+        label: "Leaving Page",
+        data: secondBarData,
+        backgroundColor: "#27ADB9",
+        maxBarThickness: 25,
+        borderRadius: 5,
+      },
+    ],
+  });
+
+    // Curve Line Chart Settings
+    const [activeUsersCharttData, setActiveUsersCharttData] = useState({
+      labels: [
+        "April 6",
+        "April 7",
+        "April 8",
+        "April 9",
+        "April 10",
+        "April 11",
+        "April 12",
+      ],
+      datasets: [
+        {
+          data: [5, 25, 10, 40, 15, 30, 20],
+          borderColor: "#5473E8",
+          borderWidth: 5,
+        },
+      ],
+    });
+
+      // Doughnut chart Settings
+  const [doughnutChartData, setDoughnutChartData] = useState({
+    labels: ["iOS", "Android"],
+    datasets: [
+      {
+        label: "Most Visited",
+        data: [60, 40],
+        backgroundColor: ["#5473E8", "#27ADB9"],
+        borderRadius: 5,
+        width: 0.4,
+      },
+    ],
+  });
+
+  // Demography chart Settings
+  let scatterDataList1 = [];
+  let scatterDataList2 = [];
+
+  for (let i = 1; i <= 25; i++) {
+    scatterDataList1.push({
+      x: Math.floor(Math.random() * 15),
+      y: Math.floor(Math.random() * 15),
+    });
+    scatterDataList2.push({
+      x: Math.floor(Math.random() * 15),
+      y: Math.floor(Math.random() * 15),
+    });
+  }
+
+  const [demographyChartData, setDemographyChartData] = useState({
+    labels: ["Search", "Activate", "Scan", "Payment"],
+    datasets: [
+      {
+        label: "MacOS",
+        data: scatterDataList1,
+        backgroundColor: "#5473E8",
+        maxBarThickness: 25,
+        borderRadius: 10,
+        rotation: 2,
+      },
+      {
+        label: "Linux",
+        data: scatterDataList2,
+        backgroundColor: "#27ADB9",
+        maxBarThickness: 25,
+        borderRadius: 10,
+        rotation: 2,
+      },
+    ],
+  });
+
   // Breakpoints
   const [infoBodyBreakpoint, setInfoBodyBreakpoint] = useState("col-12");
   const [infoCardBreakpoint, setInfoCardBreakpoint] = useState("col");
@@ -96,20 +209,24 @@ export default function Analytics() {
       <div className="row">
         <div
           className={`${infoBodyBreakpoint} row info-body analytics-section`}
-          style={{ backgroundColor: "#fff"}}
+          style={{ backgroundColor: "#fff" }}
         >
           {infoCardData.map((data, index) => {
             return (
               <div className={`${infoCardBreakpoint}`} key={index + 1}>
-                <InfoCard
-                  cardData={data}
-                />
+                <InfoCard cardData={data} />
               </div>
             );
           })}
         </div>
         <div className="col-8 p-0">
           <Installs chartdata={installLineChartData} />
+          <PopularPages chartdata={popularPagesData} />
+          <DailyActiveUsers chartdata={activeUsersCharttData} />
+          <Demography chartdata={demographyChartData} />
+        </div>
+        <div className="col-4 pe-0">
+          <OperatingSystem chartdata={operatingSystemData} />
         </div>
       </div>
     </div>

@@ -1,14 +1,19 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { Chart } from "chart.js/auto";
+import { Chart as ChartJs } from "chart.js/auto";
 import colors from "../../Utils/colors";
 
-export default function Installs({ chartdata }) {
+export default function DailyActiveUsers({ chartdata }) {
   return (
-    <div className="card analytics-section px-3 pt-2" style={{ border: "0"}}>
-      <div className="card-body">
-      <i className="bi bi-three-dots-vertical info-card-menuBtn"></i>
-        <h5 className="card-title text-start pb-4 fs-3 pe-1" style={{color: colors.infoCardTxt, fontWeight: "600"}}>Installs</h5>
+    <div id="daily-active-users" class="card analytics-section px-3 pt-2 pb-3" style={{ border: "0" }}>
+      <div class="card-body">
+        <i className="bi bi-three-dots-vertical info-card-menuBtn"></i>
+        <h5
+          class="card-title text-start pb-4 fs-3"
+          style={{ color: colors.infoCardTxt, fontWeight: "600" }}
+        >
+          Daily Active Users
+        </h5>
         <Line
           data={chartdata}
           options={{
@@ -20,7 +25,6 @@ export default function Installs({ chartdata }) {
                   callback: function (value) {
                     const valueLegend = this.getLabelForValue(value);
                     const valueLegendRep = valueLegend.replaceAll(",", "");
-
                     return valueLegendRep === "0"
                       ? valueLegendRep
                       : valueLegendRep + "K";
@@ -41,26 +45,6 @@ export default function Installs({ chartdata }) {
             },
           }}
         />
-        <div className="d-flex justify-content-end ps-5 pe-5">
-          <div className="d-flex align-items-center pe-4">
-            <span
-              className="pe-2"
-              style={{ fontSize: "40px", color: "#5473E8" }}
-            >
-              •
-            </span>
-            Install
-          </div>
-          <div className="d-flex align-items-center">
-            <span
-              className="pe-2"
-              style={{ fontSize: "40px", color: "#27ADB9" }}
-            >
-              •
-            </span>
-            Uninstall
-          </div>
-        </div>
       </div>
     </div>
   );

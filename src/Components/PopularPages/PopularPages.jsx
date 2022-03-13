@@ -1,18 +1,17 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
-import { Chart } from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
+import { Chart as ChartJs } from "chart.js/auto";
 import colors from "../../Utils/colors";
 
-export default function Installs({ chartdata }) {
+export default function PopularPages({ chartdata }) {
   return (
-    <div className="card analytics-section px-3 pt-2" style={{ border: "0"}}>
-      <div className="card-body">
+    <div id="popular-pages" class="card analytics-section px-3 pt-2" style={{ border: "0"}}>
+      <div class="card-body">
       <i className="bi bi-three-dots-vertical info-card-menuBtn"></i>
-        <h5 className="card-title text-start pb-4 fs-3 pe-1" style={{color: colors.infoCardTxt, fontWeight: "600"}}>Installs</h5>
-        <Line
-          data={chartdata}
+        <h5 class="card-title text-start pb-4 fs-3" style={{color: colors.infoCardTxt, fontWeight: "600"}}>Popular Pages</h5>
+        <Bar
+          data={chartdata}  
           options={{
-            tension: 0.4,
             scales: {
               y: {
                 beginAtZero: true,
@@ -20,10 +19,7 @@ export default function Installs({ chartdata }) {
                   callback: function (value) {
                     const valueLegend = this.getLabelForValue(value);
                     const valueLegendRep = valueLegend.replaceAll(",", "");
-
-                    return valueLegendRep === "0"
-                      ? valueLegendRep
-                      : valueLegendRep + "K";
+                    return valueLegendRep + "K";
                   },
                 },
               },
@@ -49,7 +45,7 @@ export default function Installs({ chartdata }) {
             >
               •
             </span>
-            Install
+            Most Visited
           </div>
           <div className="d-flex align-items-center">
             <span
@@ -58,7 +54,7 @@ export default function Installs({ chartdata }) {
             >
               •
             </span>
-            Uninstall
+            Leaving Page
           </div>
         </div>
       </div>

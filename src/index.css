@@ -290,4 +290,52 @@ body {
 .analytics-section {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
+  background-color: #fff;
+}
+
+/* OPERATING SYSTEM SECTION  */
+.donutCell
+{
+    position: relative;
+}
+.donutDiv
+{
+    width: 256px;
+    height: 256px;
+}
+
+.centerLabel
+{
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 256px;
+    line-height: 256px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+}
+.first-center-element {
+  position: relative;
+  height: 20px;
+  bottom: 10px;
+  margin: 0;
+}
+.second-center-element {
+  height: 20px;
+  font-size: 20px;
+}
+.donut-menu-button{
+  position: absolute;
+  font-size: 30px;
+  left: 85%;
+}
+#popular-pages {
+  margin-top: 20px;
+}
+#daily-active-users {
+  margin-top: 20px;
+}
+#demography {
+  margin-top: 20px;
 }

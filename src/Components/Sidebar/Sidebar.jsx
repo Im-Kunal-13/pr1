@@ -44,7 +44,7 @@ export default function Sidebar() {
       <div className={sidebarClassList}>
         <div className="logo_content">
           <div className="logo">
-            <i class="bi bi-laptop"></i>
+          <i class="bi bi-code-slash"></i>
             <div className="logo_name">Brand Name</div>
           </div>
           <i
