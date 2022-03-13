@@ -12,9 +12,8 @@
 
 body {
   position: relative;
-  min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .sidebar {
   position: fixed;
@@ -263,7 +262,7 @@ body {
 }
 .analytics-body {
   background-color: #F1F1F1;
-  padding: 20px;
+  padding: 20px 30px;
 }
 .info-card-title {
   color: #889DBC;
@@ -280,11 +279,15 @@ body {
    color: #BDC9D9;
 }
 .info-body {
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 .info-card-menuBtn {
   position: absolute;
   right: 5%;
   color: #B6C1D3;
+}
+.analytics-section {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
 }

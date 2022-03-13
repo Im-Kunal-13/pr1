@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { clear } from "@testing-library/user-event/dist/clear";
 
 export default function Analytics() {
+  // CARD BORDER STATES.
   // const [card1Border, setCard1Border] = useState("")
   // const [card2Border, setCard2Border] = useState("")
   // const [card3Border, setCard3Border] = useState("")
@@ -13,10 +14,6 @@ export default function Analytics() {
 
   // Sidebar Active State Context
   const a = useContext(sidebarContext);
-  
-  // const [extraDashBoardSpace, setExtraDashBoardSpace] = useState(
-  //   a.sidebarActiveState === false ? 162 : 0
-  // );
 
   var infoCardData = [
     {
@@ -74,70 +71,45 @@ export default function Analytics() {
   });
 
   // Breakpoints
-  const [infoBodyBreakpoint, setInfoBodyBreakpoint] = useState("col-lg-8");
+  const [infoBodyBreakpoint, setInfoBodyBreakpoint] = useState("col-12");
   const [infoCardBreakpoint, setInfoCardBreakpoint] = useState("col");
-  const [infoCardBodyBreakpointClass, setInfoCardBodyBreakpoint] = useState("");
 
-window.addEventListener("load", () => {
-  window.dispatchEvent(new Event('resize'))
-})
+  window.addEventListener("load", () => {
+    window.dispatchEvent(new Event("resize"));
+  });
 
   window.addEventListener("resize", (event) => {
-    // setExtraDashBoardSpace(a.sidebarActiveState === true ? 162 : 0)
-    // console.log(a.sidebarActiveState);
-    // console.log(a.extraDashboardSpace)
-    if (window.innerWidth - a.extraDashboardSpace > 1500) {
-      setInfoBodyBreakpoint("col-xl-8");
-    } else {
-      setInfoBodyBreakpoint("col-12");
-    }
     if (window.innerWidth - a.extraDashboardSpace > 1050) {
       setInfoCardBreakpoint("col");
-      setInfoCardBodyBreakpoint("");
-      //   setCard1Border("end")
-      //   setCard2Border("end")
-      //   setCard3Border("end")
-      //   setCard4Border("")
     } else if (
       window.innerWidth - a.extraDashboardSpace > 600 &&
       window.innerWidth - a.extraDashboardSpace <= 1050
     ) {
       setInfoCardBreakpoint("col-6");
-      setInfoCardBodyBreakpoint("center");
-      //   setCard1Border("")
-      //   setCard2Border("end")
-      //   setCard3Border("end")
-      //   setCard4Border("")
     } else {
       setInfoCardBreakpoint("col-12");
-      setInfoCardBodyBreakpoint("center");
-      //   setCard1Border("bottom")
-      //   setCard2Border("bottom")
-      //   setCard3Border("bottom")
-      //   setCard4Border("")
     }
   });
 
   return (
     <div className="analytics-body">
-      <div className="row" style={{ paddingLeft: "20px" }}>
+      <div className="row">
         <div
-          className={`${infoBodyBreakpoint} row info-body p-3`}
-          style={{ backgroundColor: "#fff" }}
+          className={`${infoBodyBreakpoint} row info-body analytics-section`}
+          style={{ backgroundColor: "#fff"}}
         >
           {infoCardData.map((data, index) => {
             return (
               <div className={`${infoCardBreakpoint}`} key={index + 1}>
                 <InfoCard
                   cardData={data}
-                  cardBreakpointClass={infoCardBodyBreakpointClass}
                 />
               </div>
             );
           })}
         </div>
-        <div className="col-4">
-          {/* <Installs chartdata={installLineChartData}/> */}
+        <div className="col-8 p-0">
+          <Installs chartdata={installLineChartData} />
         </div>
       </div>
     </div>

@@ -7,23 +7,24 @@ export default function Sidebar() {
   // Sidebar Use Context.
   const a = useContext(sidebarContext);
 
+  // useStates...
   const [sidebarClassList, setSidebarClassList] = useState("sidebar");
-  const [sidebarActiveState, setSideBarActiveState] = useState(false);
   const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
   const [selectedBtn, setSelectedBtn] = useState("");
 
+
+  // CSS button hover.
   const btnHoverCss = {
     color: "#5473E8",
     backgroundColor: "#fff",
     boxShadow: "0 0 10px 2px #fff",
   };
 
+  // Toggle button handler function.
   const dashboardTogglerHandler = () => {
     a.update();
 
     setTimeout(() => {
-      setSideBarActiveState(!a.sidebarActiveState);
-
       // adding corresponding classes to match the breakpoint.
       if (!a.sidebarActiveState) {
         setSidebarClassList("sidebar active");
@@ -33,6 +34,7 @@ export default function Sidebar() {
         setToggleBtnIconClass("bx-log-in");
       }
 
+      // Triggering window resize event at the very end to ensure proper responsiveness.
       window.dispatchEvent(new Event("resize"));
     }, 20);
   };
@@ -42,8 +44,8 @@ export default function Sidebar() {
       <div className={sidebarClassList}>
         <div className="logo_content">
           <div className="logo">
-            <i className="bx bxl-c-plus-plus"></i>
-            <div className="logo_name">Coding Lab</div>
+            <i class="bi bi-laptop"></i>
+            <div className="logo_name">Brand Name</div>
           </div>
           <i
             className={`bx ${toggleBtnIconClass}`}
@@ -54,7 +56,7 @@ export default function Sidebar() {
         <ul className="nav_list">
           <li>
             <Link to="#">
-              <i className="bx bx-search"></i>
+              <i className="bx bx-search" onClick={dashboardTogglerHandler}></i>
               <input type="text" placeholder="Search..." />
             </Link>
             <span className="tooltip">Search</span>
