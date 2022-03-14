@@ -4,17 +4,20 @@ let systemsData = [
     {
         systemName: "MacOS",
         compatiblePercentage: 53,
-        barColor: colors.appBlue
+        barColor: colors.appBlue,
+        iconClass: "bi-apple"
     },
     {
         systemName: "Windows",
         compatiblePercentage: 41,
-        barColor: colors.appGreen
+        barColor: colors.appGreen,
+        iconClass: "bi-windows"
     },
     {
         systemName: "Linux",
         compatiblePercentage: 6,
-        barColor: colors.compatibilityBarViolet
+        barColor: colors.compatibilityBarViolet,
+        iconClass: "bi-git"
     },
 ]
 

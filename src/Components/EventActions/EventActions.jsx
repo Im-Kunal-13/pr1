@@ -12,7 +12,7 @@ export default function EventActions({ chartdata }) {
     >
       <div
         className="card"
-        style={{ border: "0", width: "20rem", paddingRight: "10px" }}
+        style={{ border: "0", paddingRight: "10px" }}
       >
         <div className="card-body p-0">
             <i
@@ -66,26 +66,26 @@ export default function EventActions({ chartdata }) {
           />
         </div>
       </div>
-      <div className="d-flex justify-content-around ps-5 pe-5">
-        <div className="d-flex align-items-center pe-3">
+      <div className="d-flex justify-content-around ps-5 pe-5 row">
+        <div className="d-flex align-items-center pe-3 col-6 justify-content-center col-xxl-3">
           <span className="pe-2" style={{ fontSize: "40px", color: "#5473E8" }}>
             •
           </span>
           Search
         </div>
-        <div className="d-flex align-items-center pe-3">
+        <div className="d-flex align-items-center pe-3 col-6 justify-content-center col-xxl-3">
           <span className="pe-2" style={{ fontSize: "40px", color: "#27ADB9" }}>
             •
           </span>
           Activate
         </div>
-        <div className="d-flex align-items-center pe-3">
+        <div className="d-flex align-items-center pe-3 col-6 justify-content-center col-xxl-3">
           <span className="pe-2" style={{ fontSize: "40px", color: "#5473E8" }}>
             •
           </span>
           Scan
         </div>
-        <div className="d-flex align-items-center pe-3">
+        <div className="d-flex align-items-center pe-3 col-6 justify-content-center col-xxl-3">
           <span className="pe-2" style={{ fontSize: "40px", color: colors.compatibilityBarViolet }}>
             •
           </span>

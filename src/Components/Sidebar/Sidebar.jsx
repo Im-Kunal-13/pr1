@@ -11,7 +11,7 @@ export default function Sidebar(props) {
   const [sidebarClassList, setSidebarClassList] = useState("sidebar");
   const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
   const [selectedBtn, setSelectedBtn] = useState("");
-// console.log(props.location.pathname)
+  // console.log(props.location.pathname)
 
   // CSS button hover.
   const btnHoverCss = {
@@ -44,8 +44,8 @@ export default function Sidebar(props) {
       <div className={sidebarClassList}>
         <div className="logo_content">
           <div className="logo">
-          <i className="bi bi-code-slash"></i>
-            <div className="logo_name">Brand Name</div>
+            <i className="bi bi-code-slash"></i>
+            <div className="logo_name">Code Geek</div>
           </div>
           <i
             className={`bx ${toggleBtnIconClass}`}
@@ -174,8 +174,8 @@ export default function Sidebar(props) {
             <span className="tooltip">Settings</span>
           </li>
         </ul>
-        <div className="profile_content">
-          <div className="profile">
+        {/* <div className="profile_content"> */}
+          {/* <div className="profile"> */}
             {/* <div className="profile_details">
               <img src="profile.jpg" alt="" />
               <div className="name_job">
@@ -193,8 +193,8 @@ export default function Sidebar(props) {
                 id="flexSwitchCheckDefault"
               />
             </div> */}
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     </>
   );

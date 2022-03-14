@@ -13,7 +13,7 @@ export default function OperatingSystem({ chartdata }) {
 
       <div
         className="card"
-        style={{ border: "0", width: "20rem", paddingLeft: "26px" }}
+        style={{ border: "0", paddingLeft: "26px" }}
       >
         <div className="card-body p-0">
           <h5
@@ -56,7 +56,7 @@ export default function OperatingSystem({ chartdata }) {
             </div>
             <div className="centerLabel">
               <p className="first-center-element">58%</p>
-              <span className="second-center-element">26352 devices</span>
+              <span className="second-center-element info-card-title">26,352 devices</span>
             </div>
           </div>
         </div>
