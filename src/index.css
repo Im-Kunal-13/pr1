@@ -66,6 +66,7 @@ body {
   text-align: center;
   line-height: 50px;
   transform: translate(-50%);
+  transition: left 0.5s ease;
 }
 .sidebar #btn:hover {
   background: #fff;
@@ -242,13 +243,14 @@ body {
 }
 .home_content {
   position: absolute;
-  height: 100%;
+  /* height: 100%; */
   width: calc(100% - 78px);
   left: 78px;
-  margin: 20px;
+  /* margin: 20px; */
   transition: all 0.5s ease;
   padding: 0;
   margin: 0;
+  background-color: #f1f1f1;
 }
 .sidebar.active ~ .home_content {
   width: calc(100% - 240px);
@@ -261,22 +263,21 @@ body {
   margin: 12px;
 }
 .analytics-body {
-  background-color: #F1F1F1;
   padding: 20px 30px;
 }
 .info-card-title {
-  color: #889DBC;
+  color: #889dbc;
   font-size: 18px;
 }
 .info-card-txt {
-  color: #344B6B;
+  color: #344b6b;
   font-size: 40px;
   font-weight: bold;
   margin: 0;
 }
 .info-card-extra-txt {
   font-size: 12px;
-   color: #BDC9D9;
+  color: #bdc9d9;
 }
 .info-body {
   margin: 0 0 20px 0;
@@ -285,7 +286,7 @@ body {
 .info-card-menuBtn {
   position: absolute;
   right: 5%;
-  color: #B6C1D3;
+  color: #b6c1d3;
 }
 .analytics-section {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
@@ -294,26 +295,23 @@ body {
 }
 
 /* OPERATING SYSTEM SECTION  */
-.donutCell
-{
-    position: relative;
+.donutCell {
+  position: relative;
 }
-.donutDiv
-{
-    width: 256px;
-    height: 256px;
+.donutDiv {
+  width: 256px;
+  height: 256px;
 }
 
-.centerLabel
-{
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    width: 256px;
-    line-height: 256px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 36px;
+.centerLabel {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 256px;
+  line-height: 256px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
 }
 .first-center-element {
   position: relative;
@@ -325,7 +323,7 @@ body {
   height: 20px;
   font-size: 20px;
 }
-.donut-menu-button{
+.donut-menu-button {
   position: absolute;
   font-size: 30px;
   left: 85%;
@@ -338,4 +336,47 @@ body {
 }
 #demography {
   margin-top: 20px;
+}
+
+/* Compatibility Section  */
+#compatibility {
+  margin-top: 20px;
+}
+
+/* Event Actions  */
+#event-actions {
+  margin-top: 20px;
+}
+
+/* Footer Section  */
+#footer {
+  background-color: #f1f1f1;
+}
+.footer-hr {
+  margin: 50px auto;
+  width: 80%;
+}
+.footer-info {
+  margin: 0 auto 50px auto;
+}
+.footer-info-title {
+  color: #889dbc;
+  font-size: 18px;
+}
+.footer-end-copyright {
+  /* position: absolute;
+  left: 5%; */
+}
+.footer-end {
+  width: 90%;
+  margin: 0  auto 30px auto;
+}
+#footer-toggle-section {
+  border-radius: 40px;
+}
+.footer-toggle-btn:hover {
+  background: #5473e8;
+  color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 5px 2px #5473e8;
 }

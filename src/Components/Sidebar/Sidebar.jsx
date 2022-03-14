@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import sidebarContext from "../Context/sidebarContext";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   // Sidebar Use Context.
   const a = useContext(sidebarContext);
 
@@ -11,7 +11,7 @@ export default function Sidebar() {
   const [sidebarClassList, setSidebarClassList] = useState("sidebar");
   const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
   const [selectedBtn, setSelectedBtn] = useState("");
-
+// console.log(props.location.pathname)
 
   // CSS button hover.
   const btnHoverCss = {
@@ -44,7 +44,7 @@ export default function Sidebar() {
       <div className={sidebarClassList}>
         <div className="logo_content">
           <div className="logo">
-          <i class="bi bi-code-slash"></i>
+          <i className="bi bi-code-slash"></i>
             <div className="logo_name">Brand Name</div>
           </div>
           <i

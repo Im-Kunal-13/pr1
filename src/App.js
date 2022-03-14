@@ -12,6 +12,7 @@ import Analytics from "./Components/Analytics/Analytics";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Home from "./Components/Home";
 import Sidebar from "./Components/Sidebar/Sidebar";
+import Footer from "./Components/Footer/Footer";
 
 export default function App() {
   // let navigate = useNavigate();
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/analytics" element={<Analytics />} />
               <Route path="*" element={<h1>Error</h1>} />
             </Routes>
+            <Footer />
           </div>
         </div>
       </BrowserRouter>

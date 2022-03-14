@@ -9,15 +9,15 @@ export default function OperatingSystem({ chartdata }) {
       className="analytics-section d-flex justify-content-center py-4"
       style={{ width: "100%" }}
     >
-      <i className="bi bi-three-dots-vertical info-card-menuBtn"></i>
+      <i className="bi bi-three-dots-vertical info-card-menuBtn" style={{marginTop: "6px"}}></i>
 
       <div
-        class="card"
+        className="card"
         style={{ border: "0", width: "20rem", paddingLeft: "26px" }}
       >
-        <div class="card-body p-0">
+        <div className="card-body p-0">
           <h5
-            class="card-title text-start pb-4 fs-3 text-center d-flex align-items-center"
+            className="card-title text-start pb-4 fs-3 text-center d-flex align-items-center"
             style={{ color: colors.infoCardTxt, fontWeight: "600" }}
           >
             Operating Systems

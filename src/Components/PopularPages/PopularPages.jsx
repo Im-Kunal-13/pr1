@@ -5,10 +5,10 @@ import colors from "../../Utils/colors";
 
 export default function PopularPages({ chartdata }) {
   return (
-    <div id="popular-pages" class="card analytics-section px-3 pt-2" style={{ border: "0"}}>
-      <div class="card-body">
+    <div id="popular-pages" className="card analytics-section px-3 pt-2" style={{ border: "0"}}>
+      <div className="card-body">
       <i className="bi bi-three-dots-vertical info-card-menuBtn"></i>
-        <h5 class="card-title text-start pb-4 fs-3" style={{color: colors.infoCardTxt, fontWeight: "600"}}>Popular Pages</h5>
+        <h5 className="card-title text-start pb-4 fs-3" style={{color: colors.infoCardTxt, fontWeight: "600"}}>Popular Pages</h5>
         <Bar
           data={chartdata}  
           options={{

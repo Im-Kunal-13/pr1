@@ -5,11 +5,11 @@ import colors from "../../Utils/colors";
 
 export default function DailyActiveUsers({ chartdata }) {
   return (
-    <div id="daily-active-users" class="card analytics-section px-3 pt-2 pb-3" style={{ border: "0" }}>
-      <div class="card-body">
+    <div id="daily-active-users" className="card analytics-section px-3 pt-2 pb-3" style={{ border: "0" }}>
+      <div className="card-body">
         <i className="bi bi-three-dots-vertical info-card-menuBtn"></i>
         <h5
-          class="card-title text-start pb-4 fs-3"
+          className="card-title text-start pb-4 fs-3"
           style={{ color: colors.infoCardTxt, fontWeight: "600" }}
         >
           Daily Active Users

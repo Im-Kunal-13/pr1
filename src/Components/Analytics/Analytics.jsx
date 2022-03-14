@@ -9,6 +9,9 @@ import PopularPages from "../PopularPages/PopularPages";
 import myUserData from "../PopularPages/sub-components/Data";
 import DailyActiveUsers from "../ActiveUsers/DailyActiveUsers";
 import Demography from "../Demography/Demography";
+import Compatibility from "../Compatibility/Compatibility";
+import EventActions from "../EventActions/EventActions";
+import colors from "../../Utils/colors";
 
 export default function Analytics() {
   // CARD BORDER STATES.
@@ -183,6 +186,22 @@ export default function Analytics() {
     ],
   });
 
+    // Pie chart Settings
+    const [eventActionsData, setEventActionsData] = useState({
+      labels: ["Search", "Activate", "Scan", "Payment"],
+      datasets: [
+        {
+          label: "Most Visited",
+          data: [50, 20, 30, 10],
+          backgroundColor: ["#5473E8", "#27ADB9", "#5473E8", colors.compatibilityBarViolet],
+          maxBarThickness: 25,
+          borderRadius: 10,
+          rotation: 2,
+        },
+      ],
+    });
+  
+
   // Breakpoints
   const [infoBodyBreakpoint, setInfoBodyBreakpoint] = useState("col-12");
   const [infoCardBreakpoint, setInfoCardBreakpoint] = useState("col");
@@ -227,6 +246,8 @@ export default function Analytics() {
         </div>
         <div className="col-4 pe-0">
           <OperatingSystem chartdata={operatingSystemData} />
+          <Compatibility />
+          <EventActions chartdata={eventActionsData} />
         </div>
       </div>
     </div>
