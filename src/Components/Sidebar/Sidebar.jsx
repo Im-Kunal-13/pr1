@@ -10,7 +10,7 @@ export default function Sidebar(props) {
   // useStates...
   const [sidebarClassList, setSidebarClassList] = useState("sidebar");
   const [toggleBtnIconClass, setToggleBtnIconClass] = useState("bx-log-in");
-  const [selectedBtn, setSelectedBtn] = useState("");
+  const [selectedBtn, setSelectedBtn] = useState("analyticsBtn");
   // console.log(props.location.pathname)
 
   // CSS button hover.
@@ -64,7 +64,7 @@ export default function Sidebar(props) {
           <li>
             <Link
               id="homeBtn"
-              to="/"
+              to="#"
               style={selectedBtn === "homeBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("homeBtn");
@@ -78,7 +78,7 @@ export default function Sidebar(props) {
           <li>
             <Link
               id="modelBtn"
-              to="/"
+              to="#"
               style={selectedBtn === "modelBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("modelBtn");
@@ -92,7 +92,7 @@ export default function Sidebar(props) {
           <li>
             <Link
               id="dashboardBtn"
-              to="/dashboard"
+              to="#"
               style={selectedBtn === "dashboardBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("dashboardBtn");
@@ -105,7 +105,7 @@ export default function Sidebar(props) {
           </li>
           <li>
             <Link
-              to="/pie"
+              to="#"
               id="pieBtn"
               style={selectedBtn === "pieBtn" ? btnHoverCss : {}}
               onClick={() => {
@@ -119,7 +119,7 @@ export default function Sidebar(props) {
           </li>
           <li>
             <Link
-              to="/bar"
+              to="#"
               id="barBtn"
               style={selectedBtn === "barBtn" ? btnHoverCss : {}}
               onClick={() => {
@@ -133,7 +133,7 @@ export default function Sidebar(props) {
           </li>
           <li>
             <Link
-              to="/analytics"
+              to="#"
               id="analytics"
               style={selectedBtn === "analyticsBtn" ? btnHoverCss : {}}
               onClick={() => {
@@ -148,7 +148,7 @@ export default function Sidebar(props) {
           <li>
             <Link
               id="userBtn"
-              to="/user"
+              to="#"
               style={selectedBtn === "userBtn" ? btnHoverCss : {}}
               onClick={() => {
                 setSelectedBtn("userBtn");
@@ -161,7 +161,7 @@ export default function Sidebar(props) {
           </li>
           <li>
             <Link
-              to="/settings"
+              to="#"
               id="settings"
               style={selectedBtn === "settingBtn" ? btnHoverCss : {}}
               onClick={() => {

@@ -23,7 +23,7 @@ export default function App() {
   });
   window.addEventListener("load", () => {
     setTimeout(() => {
-      window.dispatchEvent(new Event("resize"))
+      window.dispatchEvent(new Event("resize"));
     }, 200);
   });
 
@@ -31,26 +31,24 @@ export default function App() {
     <SidebarState>
       <BrowserRouter>
         <div className="body-container">
-          <Sidebar />
-          <div className="home_content">
-            {home_content ? (
-              <>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/user" element={<h1>User</h1>} />
-                  <Route path="/dashboard" element={<Dashboard />} />
+          {home_content ? (
+            <>
+              <Sidebar />
+              <div className="home_content">
+                <Analytics />
+                {/* <Routes>
+                  <Route path="/" element={<Analytics />} />
                   <Route path="/analytics" element={<Analytics />} />
-                  <Route path="*" element={<h1>Error</h1>} />
-                </Routes>
+                </Routes> */}
                 <Footer />
-              </>
-            ) : (
-              <h1>
-                This website is currently under development and doesn't support
-                screens of width less than 1100px
-              </h1>
-            )}
-          </div>
+              </div>
+            </>
+          ) : (
+            <h1>
+              This website is currently under development and doesn't support
+              screens of width less than 1100px
+            </h1>
+          )}
         </div>
       </BrowserRouter>
     </SidebarState>
