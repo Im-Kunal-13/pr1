@@ -29,17 +29,17 @@ export default function App() {
 
   return (
     <SidebarState>
-      <BrowserRouter>
+      <BrowserRouter  basename={process.env.PUBLIC_URL}>
         <div className="body-container">
           {home_content ? (
             <>
               <Sidebar />
               <div className="home_content">
                 <Analytics />
-                {/* <Routes>
+                <Routes>
                   <Route path="/" element={<Analytics />} />
-                  <Route path="/analytics" element={<Analytics />} />
-                </Routes> */}
+                  {/* <Route path="/analytics" element={<Analytics />} /> */}
+                </Routes>
                 <Footer />
               </div>
             </>
